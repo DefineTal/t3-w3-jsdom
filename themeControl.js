@@ -15,4 +15,30 @@ function changeCssTheme(themeName){
         console.log("Updated CSS variable --" + variable);
     }
 }
-changeCssTheme("dark");
+
+changeCssTheme("light");
+
+function setThemeToDark(){
+    changeCssTheme("dark");
+}
+
+function setThemeToLight(){
+    changeCssTheme("light");
+}
+
+function toggleCssTheme(){
+    let currentBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue("--background");
+
+    console.log("Current background color is " + currentBackgroundColor);
+
+    if (currentBackgroundColor == "white"){
+        // we already in light theme set to dark
+        changeCssTheme("dark")
+    } else{
+        // we are in dark theme, set it to light
+        changeCssTheme("light")
+    }
+}
+
+
+
